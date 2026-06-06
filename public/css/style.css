@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    padding-top: 70px;
+}
+/* All listings */
+.navbar{
+position: fixed !important;
+top: 0 ;
+width: 100%;
+z-index: 1000;
+}
+.navbar span{
+color: red;
+font-size: 1.8rem;
+}
+.alllistingtext{
+    margin-top: 0px;
+}
+.listingbox{
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+.listingbox li{
+    list-style-type:none;
+}
+.listingbox a{
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+}
+.listimg img{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    transition: transform 0.2s ease-in;
+}
+.listimg img:hover{
+    transform: scale(1.04);
+    opacity: 0.7;
+}
+.listingbox .list-info{
+    display: flex;
+    justify-content:space-between;
+    margin-top: .3rem;
+}
+.listingbox .list-info .view-btn{
+   background-color: rgb(255, 36, 36);
+   border: none;
+   border-radius: 3px 3px 3px 3px;
+   color: whitesmoke;
+   padding: 3px 8px;
+}
+.listingbox .title{
+   margin-top: .3rem;     
+}
+.listingbox .price{
+   font-weight: 500;     
+}
+/* footer */
+footer{
+    color: rgb(0, 0, 0);
+    background-color: rgb(248 249 250);
+    
+}
+.fhead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:2px solid rgb(141, 139, 139);
+}
+.logo{
+    margin-left: 20px;
+    font-size: 1.6rem;
+}
+.social{
+    margin-right: 15px;
+}
+.social i{
+    background-color: rgb(250, 46, 10);
+    padding: 2px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+.fmain{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.fmain ul{
+    padding-top: 3px;
+}
+
+.fmain li{
+    list-style: none;
+}
+.fmain .message{
+    margin-top: 30px;
+     margin-bottom: 30px;
+     width: 200px;
+}
+.fmain .message textarea{
+    padding: 5px;
+    width: 100%;
+}
+.fmain .message button{
+height: 30px;
+width: 100%;
+display: flex;
+flex-direction: column;
+margin-top: 10px;
+
+}
+/* error alert */
+.alert{
+    height: 7rem;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+@media (max-width:600px) {
+    .fmain .message{
+        width: 300px;
+    }
+  }
+.ffooter{
+    height: 30px;
+    background-color:rgb(248 249 250);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+/* show page */
+.show-img{
+    margin-top: 10px;
+    
+}
+.show-img img{
+    height: 250px;
+    width: 500px;
+object-fit: cover;
+border-radius: 10px;
+}
+.list-detail{
+    margin-top: 90px;
+}
+.show-detail{
+    display: flex;
+    justify-content: center;
+    margin-top:5px;
+}
+.show-pg-btn{
+    display: flex;
+    justify-content: space-evenly;
+}
+.show-pg-btn .show-btn{
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 7px 7px 7px 7px;
+    padding: 3px 5px;
+    border: none;
+}
+.show-pg-btn .show-btn-dlt{
+  background-color: rgb(0, 0, 0);
+    color: whitesmoke;
+    border-radius: 7px 7px 7px 7px;
+    padding: 3px 5px;
+    border: none;  
+}
+.show-desc{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.show-desc h6{
+    max-width: 400px;
+    margin-top: 30px;
+}
+/* add page */
+.add-title{
+    margin-top: 70px;
+}
+.add-form{
+    width: 800px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px;
+}
+.add-form input{
+    width: 100%;
+    height: 30px;
+}
+.add-form textarea{
+    width: 100%;
+}
+.add-btn{
+  background-color: red;
+    color: whitesmoke;
+    border-radius: 7px 7px 7px 7px;
+    padding: 3px 10px;
+    border: none;
+    margin-top: 10px;   
+}
+.edit-form input{
+    width: 100%;
+    height: 30px;
+}
+.f-btn{
+background-color: rgb(0, 0, 0);
+    color: whitesmoke;
+    border-radius: 7px 7px 7px 7px;
+    padding: 3px 5px;
+    border: none; 
+}
+/* media query */
+@media (max-width:600px){
+   .add-form{
+    width: 300px;
+   } 
+   .add-form #textarea{
+    width: 255px;
+   }
+   .edit-form{
+     width: 300px;
+   }
+   .add-form textarea{
+    width: 255px;
+   }
+   .show-image img{
+    width: 400px;
+   }
+
+}
+.maintainance{
+    height: 800px;
+    width: 100%;
+    background: aliceblue;
+}
+.maintain{
+   margin-top: 200px;
+}
+
+
+

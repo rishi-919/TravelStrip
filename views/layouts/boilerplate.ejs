@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelStrip</title>
+       <link rel="stylesheet" href="/css/style.css">
+       <link rel="stylesheet" href="/css/rating.css">
+       
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+       <!-- icon -->
+        <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg bg-white shadow-sm py-1 sticky-top">
+
+  <div class="container">
+
+    <!-- Logo -->
+    <a class="navbar-brand fs-5 fw-bold" href="/listings">
+      <span class="text-danger">T</span>ravelStrip
+    </a>
+
+    <!-- Left Menu -->
+    <ul class="navbar-nav align-items-lg-center">
+
+      <li class="nav-item mx-1">
+        <a class="nav-link active fw-semibold small" href="/listings">
+          Home
+        </a>
+      </li>
+
+      <li class="nav-item mx-1">
+        <a class="nav-link fw-semibold small" href="/listings/addnew">
+          Add New
+        </a>
+      </li>
+
+    </ul>
+
+    <!-- Search Bar -->
+    <form 
+      class="d-flex mx-auto my-2 my-lg-0"
+      role="search"
+      style="width: 35%;"
+    >
+
+      <div class="input-group input-group-sm">
+
+        <input 
+          class="form-control border-end-0 rounded-start-pill"
+          type="search"
+          placeholder="Search places..."
+        >
+
+        <button 
+          class="btn btn-danger rounded-end-pill px-3 small"
+          type="submit"
+        >
+          Search
+        </button>
+
+      </div>
+
+    </form>
+
+    <!-- Right Buttons -->
+    <div class="d-flex gap-1">
+
+  <% if(!currentUser){ %>
+
+    <a 
+      href="/users/login"
+      class="btn btn-outline-danger rounded-pill px-3 py-1 small"
+    >
+      Login
+    </a>
+
+    <a 
+      href="/users/signup"
+      class="btn btn-danger rounded-pill px-3 py-1 small"
+    >
+      Sign Up
+    </a>
+
+  <% } %>
+  <% if(currentUser){ %>
+   <a 
+        href="/users/logout"
+        class="btn btn-outline-danger rounded-pill px-3 py-1 small"
+      >
+        logout
+      </a>
+    <% } %>
+</div>
+     
+
+     
+  
+
+</nav>
+    <div class="container">
+      <%- include("../includes/flash.ejs") %>
+       <%-body %>
+    </div>
+
+    
+  <footer>
+        <div class="fhead">
+            <div class="logo"><i class='bx bxs-bolt-circle'></i><span>T</span>ravelStrip</div>
+            <div class="social"><i class='bx bxl-instagram' ></i>
+            <i class='bx bxl-instagram' ></i>
+        <i class='bx bxl-instagram' ></i>
+    <i class='bx bxl-instagram' ></i>
+<i class='bx bxl-instagram' ></i></div>
+        </div>
+        <div class="fmain">
+           <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact us</li>
+            <li>Get Started</li>
+            <li>Services</li>
+           </ul>
+           <ul>
+           
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact us</li>
+            <li>Get Started</li>
+            <li>Services</li>
+           </ul>
+           <ul>
+            
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact us</li>
+            <li>Get Started</li>
+            <li>Services</li>
+           </ul>
+           <ul>
+           
+           <div class="message">
+            <p>Message Us.</p>
+            <textarea name="" id="" rows="4"  placeholder="Write Message"></textarea>
+            <button type="submit" class="f-btn">Sumbit</button>
+           </div>
+        </div>
+        <div class="ffooter">
+            <div class="copyright">
+                All right reserved to rishi saurabh
+            </div>
+            <div class="year">@2025 copyright</div>
+        </div>
+     </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

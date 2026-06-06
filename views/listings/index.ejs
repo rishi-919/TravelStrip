@@ -1,0 +1,27 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <h1 class="mt-2 mb-1">All Listings</h1>
+    <ul>
+       <% for(let listing of allListings){%> 
+        <div class="listingbox">
+            <a href="listings/<%=listing._id%>/show">
+          <div class="listimg">
+            <img src="<%=listing.image.url %>" alt="" srcset="">
+          </div>
+          <div class="title">
+          <a href="listings/<%=listing._id%>/show"><%=listing.title%></a>
+          </div>
+          <div class="list-info">
+            <li>
+               <p class="price">&#8377;<%=listing.price.toLocaleString("en-IN")%>   /Day</p>
+            </li>
+            <a href="listings/<%=listing._id%>/show">
+            <button class="btn btn-danger rounded-pill px-3 py-1 small" type="submit">View</button> 
+            </a>
+          </div>
+           
+           </a>
+        </div> 
+      <%  }%>
+    </ul>
+</body>

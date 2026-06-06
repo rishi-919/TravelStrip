@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <h1 class="mt-2">Edit Listing</h1>
+    <form method="post" action="/listings/<%=listing._id%>/update?_method=put" class="needs-validation" novalidate>
+        <div class="edit-form add-form offset-2">
+     <p>Title:</p>
+     <input name="listing[title]" type="text" value="<%=listing.title%>" class="form-control" required>
+         <p>Description:</p><textarea name="listing[description]" required cols="100" rows="" class="form-control"><%= listing.description  %></textarea>
+          <p>Price:</p><input name="listing[price]" type="number" value="<%=listing.price%>" class="form-control" required >
+          <p>Location:</p><input name="listing[location]" type="text" value="<%=listing.location%>" class="form-control" required>
+           <p>Country:</p><input name="listing[country]" type="text" value="<%=listing.country%>" class="form-control" required>
+           <br>
+            <p>Uploaded Image:</p><!-- Image -->
+          <div class="col-md-5 mt-2">
+
+            <img 
+              src="<%= listing.image.url%>"
+              class="img-fluid h-100 w-100"
+              style="
+                object-fit: cover;
+                min-height: 100%;
+              "
+              alt="Listing Image"
+            >
+       <br>
+          </div>
+          <br>
+            <p >New Image:</p><input 
+            name="listing[image]" 
+            type="file" class="form-control">
+            <br><br>
+            <button type="submit" class="add-btn">Sumbit</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
