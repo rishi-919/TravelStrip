@@ -3,7 +3,7 @@ const router = express.Router();
 const wrapAsync = require("../utiles/wrapAsync.js");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-
+const User=require("../models/users.js");
 //  signup
 router.get("/signup", async (req, res) => {
   res.render("users/signup.ejs");
@@ -29,7 +29,7 @@ router.post(
     } catch (e) {
       req.flash("error", e.message);
 
-      res.redirect("users/signup");
+      res.redirect("/users/signup");
     }
   }),
 );

@@ -29,6 +29,7 @@ const { isReviewAuthor } = require("./middleware.js");
 const listings = require("./routes/listing.js");
 const reviews = require("./routes/review.js");
 const users=require("./routes/user.js");
+const dburl=process.env.ATLAS_URL;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -79,7 +80,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/airbnb");
+  await mongoose.connect(dburl);
 }
 
 const validateListing = (req, res, next) => {
@@ -102,27 +103,11 @@ const validateReview = (req, res, next) => {
   }
 };
 
-app.use((req, res, next) => {
-  res.locals.success = req.flash("success");
-  next();
-});
+
 
 app.use("/listings", listings);
 app.use("/listings/:id/reviews", reviews);
 app.use("/users",users);
-
-
-
-// // login
-//  app.get("/demouser",async(req,res)=>{
-//     let fakeUser=new User({
-//         email:"demouser@gmail.com",
-//         username:"demouser1"
-
-//     });
-//     let registeredUser=await User.register(fakeUser,"helloworld");
-//     res.send(registeredUser);
-//  });
 
 
 // route not match
