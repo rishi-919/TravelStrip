@@ -12,8 +12,7 @@
         <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
-   <nav class="navbar navbar-expand-lg bg-white shadow-sm py-1 sticky-top">
-
+   <nav class="navbar navbar-expand-lg bg-white shadow-sm py-2 sticky-top">
   <div class="container">
 
     <!-- Logo -->
@@ -21,83 +20,94 @@
       <span class="text-danger">T</span>ravelStrip
     </a>
 
-    <!-- Left Menu -->
-    <ul class="navbar-nav align-items-lg-center">
-
-      <li class="nav-item mx-1">
-        <a class="nav-link active fw-semibold small" href="/listings">
-          Home
-        </a>
-      </li>
-
-      <li class="nav-item mx-1">
-        <a class="nav-link fw-semibold small" href="/listings/addnew">
-          Add New
-        </a>
-      </li>
-
-    </ul>
-
-    <!-- Search Bar -->
-    <form 
-      class="d-flex mx-auto my-2 my-lg-0"
-      role="search"
-      style="width: 35%;"
+    <!-- Burger Menu -->
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="input-group input-group-sm">
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarContent">
 
-        <input 
-          class="form-control border-end-0 rounded-start-pill"
-          type="search"
-          placeholder="Search places..."
-        >
+      <!-- Left Menu -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item mx-lg-2">
+          <a class="nav-link active fw-semibold" href="/listings">
+            Home
+          </a>
+        </li>
 
-        <button 
-          class="btn btn-danger rounded-end-pill px-3 small"
-          type="submit"
-        >
-          Search
-        </button>
+        <li class="nav-item mx-lg-2">
+          <a class="nav-link fw-semibold" href="/listings/addnew">
+            Add New
+          </a>
+        </li>
+      </ul>
+
+      <!-- Search Bar -->
+      <form
+        class="d-flex my-3 my-lg-0 mx-lg-auto"
+        role="search"
+      >
+        <div class="input-group">
+          <input
+            class="form-control border-end-0 rounded-start-pill"
+            type="search"
+            placeholder="Search places..."
+          >
+
+          <button
+            class="btn btn-danger rounded-end-pill px-3"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+
+      <!-- Right Buttons -->
+      <div class="d-flex flex-column flex-lg-row gap-2 mt-3 mt-lg-0">
+
+        <% if(!currentUser){ %>
+
+          <a
+            href="/users/login"
+            class="btn btn-outline-danger rounded-pill px-3"
+          >
+            Login
+          </a>
+
+          <a
+            href="/users/signup"
+            class="btn btn-danger rounded-pill px-3"
+          >
+            Sign Up
+          </a>
+
+        <% } %>
+
+        <% if(currentUser){ %>
+
+          <a
+            href="/users/logout"
+            class="btn btn-outline-danger rounded-pill px-3"
+          >
+            Logout
+          </a>
+
+        <% } %>
 
       </div>
 
-    </form>
-
-    <!-- Right Buttons -->
-    <div class="d-flex gap-1">
-
-  <% if(!currentUser){ %>
-
-    <a 
-      href="/users/login"
-      class="btn btn-outline-danger rounded-pill px-3 py-1 small"
-    >
-      Login
-    </a>
-
-    <a 
-      href="/users/signup"
-      class="btn btn-danger rounded-pill px-3 py-1 small"
-    >
-      Sign Up
-    </a>
-
-  <% } %>
-  <% if(currentUser){ %>
-   <a 
-        href="/users/logout"
-        class="btn btn-outline-danger rounded-pill px-3 py-1 small"
-      >
-        logout
-      </a>
-    <% } %>
-</div>
-     
-
-     
-  
-
+    </div>
+  </div>
 </nav>
     <div class="container">
       <%- include("../includes/flash.ejs") %>
